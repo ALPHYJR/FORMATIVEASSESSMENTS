@@ -1,0 +1,45 @@
+<!DOCTYPE.html>
+<html>
+  <head>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 40%;
+        margin: 0 auto; 
+      }
+      td {
+        border: 1px solid black;
+        padding: 10px;
+        text-align: center;
+      }
+      tr:nth-child(odd) {
+        background-color: #f2f2f2cb; 
+      }
+      h2 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Multiplication Table</h2>
+    <table id="tableAdd"></table>
+    <script>
+      let rows = prompt("Enter the number of rows:");
+      let column = prompt("Enter the number of columns:");
+      if((!(rows < 2 || rows > 10) && !(column < 2 || column > 10)) == false){
+        alert("Numbers should be within the range of 2 to 10");
+      }
+      else{
+      var table = document.getElementById("tableAdd");
+
+      for (var i = 1; i <= rows; i++) {
+        var x = table.insertRow();
+        for (var j = 1; j <= column; j++) {
+          var y = x.insertCell();
+          y.innerHTML = i * j;
+        }
+      }
+    }
+    </script>
+  </body>
+</html>
